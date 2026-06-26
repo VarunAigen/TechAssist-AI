@@ -1,0 +1,39 @@
+# Environment
+.env
+venv/
+__pycache__/
+*.pyc
+
+# Database
+*.db
+*.sqlite3
+
+# ChromaDB local data
+backend/chroma_db/
+
+# Uploads (user data)
+backend/uploads/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Word temp files
+~$*
+~WRL*.tmp
+
+# Logs
+*.log
+
+# Gemini agent data
+.agents/
