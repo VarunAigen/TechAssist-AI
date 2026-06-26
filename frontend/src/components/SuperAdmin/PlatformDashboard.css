@@ -1,0 +1,306 @@
+/* ═══════════════════════════════════════════════════════════
+   PlatformDashboard CSS — Super Admin Panel (Neomorphic)
+   ═══════════════════════════════════════════════════════════ */
+
+.superadmin-page {
+  margin-left: var(--sidebar-width);
+  height: 100vh;
+  padding: 36px 40px;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.superadmin-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 10% 10%, rgba(108, 140, 255, 0.03) 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 10%, rgba(155, 122, 255, 0.03) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.superadmin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.superadmin-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+}
+
+.superadmin-header p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.superadmin-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--accent-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 10px rgba(10, 11, 20, 0.4),
+              -2px -2px 8px rgba(108, 140, 255, 0.15);
+}
+
+/* ── Section Header ───────────────────────────────────────── */
+.superadmin-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 2;
+  position: relative;
+}
+
+.superadmin-section .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.superadmin-section .section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.superadmin-section .section-title svg {
+  color: var(--accent-blue);
+}
+
+/* ── Tenants Table ────────────────────────────────────────── */
+.tenants-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.tenants-table thead th {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-inset);
+}
+
+.tenants-table tbody td {
+  padding: 20px;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+
+.tenants-table tbody tr {
+  transition: all var(--transition-fast);
+}
+
+.tenants-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.editing-row {
+  background: rgba(108, 140, 255, 0.03) !important;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: var(--neu-shadow-sm);
+}
+
+.status-badge.active {
+  background: var(--confidence-high-bg);
+  color: var(--confidence-high);
+  border: 1px solid rgba(93, 211, 158, 0.15);
+}
+
+.status-badge.inactive {
+  background: var(--confidence-low-bg);
+  color: var(--confidence-low);
+  border: 1px solid rgba(240, 96, 112, 0.15);
+}
+
+/* Plan badge */
+.plan-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: var(--neu-shadow-sm);
+}
+
+.plan-badge.free {
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-glass);
+}
+
+.plan-badge.pro {
+  background: rgba(94, 207, 208, 0.08);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(94, 207, 208, 0.15);
+}
+
+.plan-badge.enterprise {
+  background: rgba(155, 122, 255, 0.08);
+  color: #b49cff;
+  border: 1px solid rgba(155, 122, 255, 0.15);
+}
+
+/* Usage Stats Cell */
+.usage-stats-cell {
+  display: flex;
+  gap: 14px;
+  font-size: 0.84rem;
+}
+
+.usage-stats-cell span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--bg-inset);
+  border-radius: 8px;
+  color: var(--text-primary);
+  box-shadow: var(--neu-inset-sm);
+}
+
+/* Limit & Edit Inputs */
+.edit-input {
+  background: var(--bg-inset);
+  border: 1px solid var(--border-glass);
+  color: var(--text-bright);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  outline: none;
+  width: 100%;
+  box-shadow: var(--neu-inset-sm);
+  transition: all var(--transition-fast);
+}
+
+.edit-input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: var(--neu-inset-sm), 0 0 0 3px rgba(108, 140, 255, 0.08);
+}
+
+.edit-select {
+  background: var(--bg-inset);
+  border: 1px solid var(--border-glass);
+  color: var(--text-bright);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 0.84rem;
+  outline: none;
+  cursor: pointer;
+  box-shadow: var(--neu-inset-sm);
+  transition: all var(--transition-fast);
+}
+
+.edit-select:focus {
+  border-color: var(--accent-blue);
+}
+
+.edit-limits-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-limits-cell div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-limits-cell label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  width: 44px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.edit-limits-cell input {
+  background: var(--bg-inset);
+  border: 1px solid var(--border-glass);
+  color: var(--text-bright);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  outline: none;
+  width: 70px;
+  box-shadow: var(--neu-inset-sm);
+}
+
+.edit-limits-cell input:focus {
+  border-color: var(--accent-blue);
+}
+
+/* Table Actions & Buttons */
+.table-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.error-alert {
+  padding: 12px 16px;
+  background: var(--confidence-low-bg);
+  border: 1px solid rgba(240, 96, 112, 0.15);
+  color: var(--confidence-low);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  box-shadow: var(--neu-shadow-sm);
+}
